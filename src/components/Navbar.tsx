@@ -2,10 +2,11 @@
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'Studio', href: '#studio' },
-  { label: 'About', href: '#about' },
-  { label: 'Journal', href: '#journal' },
-  { label: 'Reach Us', href: '#reach-us' },
+  { label: 'How This Began', href: '#how-this-began' },
+  { label: 'What We Offer', href: '#what-we-offer' },
+  { label: 'Why Choose Us', href: '#why-choose-us' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
