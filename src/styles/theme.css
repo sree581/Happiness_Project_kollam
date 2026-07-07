@@ -1,0 +1,86 @@
+﻿:root {
+  --background: #ffffff;
+  --ink: #000000;
+  --muted: #6f6f6f;
+}
+
+@keyframes fadeRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-rise {
+  animation: fadeRise 0.8s ease-out both;
+}
+.animate-fade-rise-delay {
+  animation: fadeRise 0.8s ease-out 0.2s both;
+}
+.animate-fade-rise-delay-2 {
+  animation: fadeRise 0.8s ease-out 0.4s both;
+}
+
+.page-smooth section:not(#home) {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-smooth section:not(#home)::before {
+  content: '';
+  position: absolute;
+  left: -4rem;
+  top: 40%;
+  width: 220px;
+  height: 220px;
+  border-radius: 9999px;
+  background: rgba(203, 219, 170, 0.16);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-smooth section:not(#home)::after {
+  content: '';
+  position: absolute;
+  right: -3rem;
+  bottom: 2rem;
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  background: rgba(226, 238, 221, 0.14);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-smooth section:not(#home) > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes petalFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(8px, -10px) rotate(6deg);
+  }
+}
+
+.petal-accent {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: rgba(203, 219, 170, 0.45);
+  filter: blur(1px);
+  animation: petalFloat 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.petal-accent.delay-1 { animation-delay: 1s; }
+.petal-accent.delay-2 { animation-delay: 2.5s; }
+.petal-accent.delay-3 { animation-delay: 4s; }
+
+.hairline {
+  border-color: rgba(0,0,0,0.1);
+}
