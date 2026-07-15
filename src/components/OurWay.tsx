@@ -7,13 +7,13 @@ export default function OurWay() {
   ];
 
   return (
-    <section id="our-way" className="px-6 py-32 bg-black text-white">
+    <section id="our-way" className="px-6 py-32">
       <div className="max-w-5xl mx-auto">
-        <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#9C9C9C' }}>Our way</p>
-        <h2 className="text-4xl sm:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-          Listen. Understand. Support. <span style={{ color: '#9C9C9C', fontStyle: 'italic' }}>Grow.</span>
+        <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>Our way</p>
+        <h2 className="text-4xl sm:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+          Listen. Understand. Support. <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>Grow.</span>
         </h2>
-        <p className="max-w-xl text-base leading-relaxed mb-16" style={{ color: '#9C9C9C' }}>
+        <p className="max-w-xl text-base leading-relaxed mb-16" style={{ color: '#6F6F6F' }}>
           Healing begins with feeling heard. Every session is guided by one principle: understand a
           person fully before offering direction, so the support we give actually fits the person
           receiving it.
@@ -23,7 +23,7 @@ export default function OurWay() {
           {pillars.map((p) => (
             <div key={p.t}>
               <h3 className="text-lg mb-2" style={{ fontFamily: 'var(--font-display)' }}>{p.t}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#9C9C9C' }}>{p.d}</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#6F6F6F' }}>{p.d}</p>
             </div>
           ))}
         </div>

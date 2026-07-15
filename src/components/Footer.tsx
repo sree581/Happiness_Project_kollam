@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="px-6 py-12 bg-black text-white border-t border-white/10">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-8 text-sm" style={{ color: '#9C9C9C' }}>
+    <footer className="px-6 py-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-8 text-sm" style={{ color: '#6F6F6F' }}>
         <div>
-          <p style={{ fontFamily: 'var(--font-display)', color: '#fff' }} className="text-xl mb-3">Happiness Project</p>
+          <p style={{ fontFamily: 'var(--font-display)', color: '#000' }} className="text-xl mb-3">Happiness Project</p>
           <p>Near Natchiar Mutt Temple, Jawahar Nagar, Kollam, Kerala</p>
           <p>+91 79074 93123</p>
         </div>

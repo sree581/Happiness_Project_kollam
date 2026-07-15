@@ -11,21 +11,23 @@ const services = [
 
 export default function HowWeHelp() {
   return (
-    <section id="how-we-help" className="max-w-6xl mx-auto px-6 py-32">
-      <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>What we offer</p>
-      <h2 className="text-4xl sm:text-5xl mb-16 animate-fade-rise" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
-        Support for <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>every stage of life.</span>
-      </h2>
+    <section id="how-we-help" className="px-6 py-32">
+      <div className="max-w-6xl mx-auto">
+        <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>What we offer</p>
+        <h2 className="text-4xl sm:text-5xl mb-16 animate-fade-rise" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+          Support for <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>every stage of life.</span>
+        </h2>
 
-      <div className="grid md:grid-cols-2 gap-x-12 gap-y-0 border-t hairline">
-        {services.map((s) => (
-          <div key={s.name} className="border-b hairline py-8 group">
-            <h3 className="text-xl mb-2 transition-colors" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
-              {s.name}
-            </h3>
-            <p className="text-sm leading-relaxed" style={{ color: '#6F6F6F' }}>{s.desc}</p>
-          </div>
-        ))}
+        <div className="grid md:grid-cols-2 gap-6">
+          {services.map((s) => (
+            <div key={s.name} className="liquid-card rounded-[1.25rem] p-6 md:p-7">
+              <h3 className="text-xl mb-2 transition-colors" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+                {s.name}
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#6F6F6F' }}>{s.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

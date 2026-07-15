@@ -13,27 +13,29 @@ export default function CommonQuestions() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="common-questions" className="max-w-4xl mx-auto px-6 py-32">
-      <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>Before you write to us</p>
-      <h2 className="text-4xl sm:text-5xl mb-16" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
-        Questions people <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>usually ask.</span>
-      </h2>
+    <section id="common-questions" className="px-6 py-32">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>Before you write to us</p>
+        <h2 className="text-4xl sm:text-5xl mb-16" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+          Questions people <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>usually ask.</span>
+        </h2>
 
-      <div className="border-t hairline">
-        {faqs.map((f, i) => (
-          <div key={f.q} className="border-b hairline">
-            <button
-              onClick={() => setOpenIdx(openIdx === i ? null : i)}
-              className="w-full text-left py-6 flex justify-between items-center gap-4"
-            >
-              <span className="text-lg" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>{f.q}</span>
-              <span style={{ color: '#6F6F6F' }}>{openIdx === i ? '−' : '+'}</span>
-            </button>
-            {openIdx === i && (
-              <p className="pb-6 text-sm leading-relaxed max-w-2xl" style={{ color: '#6F6F6F' }}>{f.a}</p>
-            )}
-          </div>
-        ))}
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <div key={f.q} className="liquid-card rounded-[1.25rem] px-5 py-4">
+              <button
+                onClick={() => setOpenIdx(openIdx === i ? null : i)}
+                className="w-full text-left flex justify-between items-center gap-4"
+              >
+                <span className="text-lg" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>{f.q}</span>
+                <span style={{ color: '#6F6F6F' }}>{openIdx === i ? '−' : '+'}</span>
+              </button>
+              {openIdx === i && (
+                <p className="pt-4 text-sm leading-relaxed max-w-2xl" style={{ color: '#6F6F6F' }}>{f.a}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

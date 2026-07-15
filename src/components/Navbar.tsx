@@ -2,11 +2,11 @@
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'How This Began', href: '#how-this-began' },
-  { label: 'What We Offer', href: '#what-we-offer' },
-  { label: 'Why Choose Us', href: '#why-choose-us' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'How This Began', href: '#who-we-are' },
+  { label: 'What We Offer', href: '#how-we-help' },
+  { label: 'Our Team', href: '#our-team' },
+  { label: 'Our Way', href: '#our-way' },
+  { label: 'Contact', href: '#reach-us' },
 ];
 
 export default function Navbar() {
