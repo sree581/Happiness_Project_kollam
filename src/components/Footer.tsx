@@ -22,6 +22,11 @@ export default function Footer() {
         professional medical or psychological advice. If you are facing a mental health emergency,
         please contact a local helpline or visit the nearest hospital.
       </p>
+      <div className="max-w-6xl mx-auto mt-6 text-xs text-center" style={{ color: '#6F6F6F' }}>
+        <a href="https://www.aspireandtact.com/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-black">
+          Powered by Aspire and Tact
+        </a>
+      </div>
     </footer>
   );
 }

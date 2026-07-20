@@ -18,9 +18,9 @@ export default function HowWeHelp() {
           Support for <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>every stage of life.</span>
         </h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {services.map((s) => (
-            <div key={s.name} className="service-card liquid-card rounded-[1.25rem] p-4 md:p-5 flex flex-col gap-4 h-full aspect-[0.92] min-h-[260px]">
+            <div key={s.name} className="service-card liquid-card rounded-[1.25rem] p-4 md:p-5 flex flex-col gap-4 h-full aspect-square min-h-[260px]">
               <div className="flex h-20 w-20 items-center justify-center rounded-[1rem] bg-white/70 text-4xl shadow-sm">
                 <span aria-hidden="true">{s.icon}</span>
               </div>

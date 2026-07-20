@@ -41,7 +41,7 @@ export default function OurTeam() {
           Every therapist at Happiness Project brings a combination of professional training, reflective sensitivity, and genuine care to the work they do.
         </p>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
           {initialTherapists.map((therapist) => (
             <article key={therapist.name} className="team-card liquid-card rounded-[28px] p-6 sm:p-8">
               <div className="flex flex-col gap-5">
