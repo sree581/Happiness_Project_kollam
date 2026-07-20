@@ -79,7 +79,7 @@ export default function Hero() {
         </h1>
 
         <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed" style={{ color: '#6F6F6F' }}>
-          Life isn't always easy, and carrying everything on your own can feel like too much. Whether you're dealing with stress, anxiety, a difficult relationship, or simply need someone who will really listen, Happiness Project is here to support you — with compassion, understanding, and professional care.
+          Life isn't always easy, and carrying everything on your own can feel like too much. Whether you're dealing with stress, anxiety, a difficult relationship, or simply need someone who will really listen, Happiness Project is here to support you with compassion, understanding, and professional care.
         </p>
 
         <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-6 leading-relaxed font-semibold" style={{ color: '#000000' }}>

@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="text-black page-smooth relative" style={{ background: 'linear-gradient(180deg, #f8f5ec 0%, #f4f1ea 52%, #f4f0fb 100%)' }}>
+    <div className="text-black page-smooth relative" style={{ background: 'linear-gradient(180deg, #dce3c7 0%, #e1e8cf 52%, #d0d9bb 100%)' }}>
       <span className="petal-accent left-8 top-72 delay-1" />
       <span className="petal-accent right-12 top-1/3 delay-2" />
       <span className="petal-accent left-1/3 bottom-20 delay-3" />

@@ -1,10 +1,11 @@
 ﻿:root {
-  --background: #f8f5ec;
+  --background: #dce3c7;
   --ink: #000000;
   --muted: #6f6f6f;
   --soft-cream: #f8f5ec;
   --soft-lavender: #f2effd;
-  --soft-sage: #e9f0e0;
+  --soft-sage: #dce3c7;
+  --title-brown: #6f4e37;
 }
 
 @keyframes fadeRise {
@@ -25,6 +26,7 @@
 .page-smooth section:not(#home) {
   position: relative;
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(220, 227, 199, 0.24), rgba(220, 227, 199, 0.36));
 }
 
 .page-smooth section:not(#home)::before {
@@ -35,7 +37,7 @@
   width: 220px;
   height: 220px;
   border-radius: 9999px;
-  background: rgba(203, 219, 170, 0.16);
+  background: rgba(220, 227, 199, 0.24);
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
@@ -49,7 +51,7 @@
   width: 160px;
   height: 160px;
   border-radius: 9999px;
-  background: rgba(226, 238, 221, 0.14);
+  background: rgba(220, 227, 199, 0.2);
   filter: blur(28px);
   pointer-events: none;
   z-index: 0;
@@ -58,6 +60,15 @@
 .page-smooth section:not(#home) > * {
   position: relative;
   z-index: 1;
+}
+
+.page-smooth section:not(#home) h2,
+.page-smooth section:not(#home) h3 {
+  color: var(--title-brown) !important;
+}
+
+.page-smooth section:not(#home) h2 span {
+  color: var(--title-brown) !important;
 }
 
 @keyframes petalFloat {
@@ -94,11 +105,25 @@
 
 .liquid-card {
   position: relative;
-  background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(250,248,240,0.48));
+  background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(241, 244, 229, 0.56));
   border: 1px solid rgba(146, 149, 128, 0.18);
   box-shadow: 0 18px 50px rgba(137, 138, 113, 0.12), inset 0 1px 1px rgba(255,255,255,0.7);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card,
+.team-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover,
+.team-card:hover,
+.liquid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 52px rgba(111, 78, 55, 0.18);
+  border-color: rgba(111, 78, 55, 0.28);
 }
 
 .liquid-card::before {

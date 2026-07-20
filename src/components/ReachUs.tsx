@@ -26,14 +26,14 @@ export default function ReachUs() {
   };
 
   return (
-    <section id="reach-us" className="px-6 py-32">
+    <section id="reach-us" className="px-6 py-20">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
         <div>
           <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>Reach us</p>
-          <h2 className="text-4xl sm:text-5xl mb-8" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+          <h2 className="text-4xl sm:text-5xl mb-8" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>
             Taking the first step <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>doesn't have to be hard.</span>
           </h2>
-          <p className="text-sm leading-relaxed mb-10" style={{ color: '#6F6F6F' }}>
+          <p className="text-sm leading-relaxed mb-6" style={{ color: '#6F6F6F' }}>
             Whether you're seeking help for yourself, your child, your relationship or your family —
             we're here to listen.
           </p>

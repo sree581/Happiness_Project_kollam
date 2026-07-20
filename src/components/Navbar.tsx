@@ -15,13 +15,13 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto relative z-20">
       <a href="#home" style={{ fontFamily: 'var(--font-display)', color: '#000000' }} className="flex items-center gap-3 text-3xl tracking-tight">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden">
-          <img src="/logo.jpeg" alt="Happiness Project logo" className="h-10 w-10 object-contain" />
+        <span className="flex h-14 w-14 items-center justify-center rounded-[14px] bg-white shadow-sm overflow-hidden border border-black/5">
+          <img src="/logo.jpeg" alt="Happiness Project logo" className="h-full w-full object-cover" />
         </span>
         <span>Happiness Project<sup className="align-super text-[0.55em]">®</sup></span>
       </a>
 
-      <div className="hidden md:flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-5 lg:gap-6">
         {links.map((link) => (
           <a
             key={link.href}

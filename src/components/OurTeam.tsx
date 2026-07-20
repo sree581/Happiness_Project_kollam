@@ -31,19 +31,19 @@ const initialTherapists = [
 
 export default function OurTeam() {
   return (
-    <section id="our-team" className="px-6 py-32">
+    <section id="our-team" className="px-6 py-20">
       <div className="max-w-6xl mx-auto">
         <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>Our team</p>
-        <h2 className="text-4xl sm:text-5xl mb-6 animate-fade-rise" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+        <h2 className="text-4xl sm:text-5xl mb-6 animate-fade-rise" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>
           Meet the <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>therapists</span>
         </h2>
         <p className="max-w-2xl text-base leading-relaxed mb-14" style={{ color: '#6F6F6F' }}>
           Every therapist at Happiness Project brings a combination of professional training, reflective sensitivity, and genuine care to the work they do.
         </p>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {initialTherapists.map((therapist) => (
-            <article key={therapist.name} className="liquid-card rounded-[28px] p-6 sm:p-8">
+            <article key={therapist.name} className="team-card liquid-card rounded-[28px] p-6 sm:p-8">
               <div className="flex flex-col gap-5">
                 <div className="flex items-start gap-4">
                   <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
@@ -53,7 +53,7 @@ export default function OurTeam() {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-2xl mb-2" style={{ fontFamily: 'var(--font-display)', color: '#000' }}>
+                    <h3 className="text-2xl mb-2" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>
                       {therapist.name}
                     </h3>
                     <p className="text-sm uppercase tracking-[0.18em]" style={{ color: '#6F6F6F' }}>
