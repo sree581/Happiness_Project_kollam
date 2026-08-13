@@ -1,6 +1,6 @@
 export default function Footer() {
-  const instagramUrl = "PASTE_YOUR_INSTAGRAM_URL_HERE";
-  const facebookUrl = "PASTE_YOUR_FACEBOOK_URL_HERE";
+  const instagramUrl = "https://www.instagram.com/happinessproject_cpc?igsh=NWlyandjMWFnaG5r";
+  const facebookUrl = "https://www.facebook.com/share/1PQBPcL1VR/?mibextid=wwXIfr";
   const whatsappUrl = "https://wa.me/917907493123";
 
   return (
