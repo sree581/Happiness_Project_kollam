@@ -1,96 +1,36 @@
-﻿import { useEffect, useState } from 'react';
+﻿import { useState } from "react";
 
 const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'How This Began', href: '#who-we-are' },
-  { label: 'What We Offer', href: '#how-we-help' },
-  { label: 'Our Team', href: '#our-team' },
-  { label: 'Our Way', href: '#our-way' },
-  { label: 'Contact', href: '#reach-us' },
+  { label: "Home", href: "#home" },
+  { label: "How This Began", href: "#who-we-are" },
+  { label: "What We Offer", href: "#how-we-help" },
+  { label: "Our Team", href: "#our-team" },
+  { label: "Our Way", href: "#our-way" },
+  { label: "Contact", href: "#reach-us" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
-  /* Prevent the Home page from scrolling while mobile menu is open */
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
 
   const closeMenu = () => {
     setOpen(false);
   };
 
   return (
-    <>
-      {/* =========================================================
-          NAVBAR
-      ========================================================= */}
-
-      <nav
-        className="
-          relative
-          z-[99999]
-          mx-auto
-          flex
-          max-w-7xl
-          flex-wrap
-          items-center
-          justify-between
-          gap-3
-          px-4
-          py-4
-          sm:px-8
-          md:py-6
-        "
-      >
-        {/* =====================================================
-            LOGO + BRAND
-        ===================================================== */}
-
+    <nav className="relative z-[9999] w-full px-4 sm:px-8 py-4 md:py-6">
+      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+        
+        {/* LOGO / BRAND */}
         <a
           href="#home"
           onClick={closeMenu}
           style={{
-            fontFamily: 'var(--font-display)',
-            color: '#000000',
+            fontFamily: "var(--font-display)",
+            color: "#000000",
           }}
-          className="
-            flex
-            min-w-0
-            items-center
-            gap-3
-            text-2xl
-            tracking-tight
-            sm:text-3xl
-          "
+          className="flex items-center gap-3 text-2xl sm:text-3xl tracking-tight min-w-0"
         >
-          <span
-            className="
-              flex
-              h-12
-              w-12
-              shrink-0
-              items-center
-              justify-center
-              overflow-hidden
-              rounded-[14px]
-              border
-              border-black/5
-              bg-white
-              shadow-sm
-              sm:h-14
-              sm:w-14
-            "
-          >
+          <span className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-[14px] bg-white shadow-sm overflow-hidden border border-black/5 shrink-0">
             <img
               src="/logo.jpeg"
               alt="Happiness Project logo"
@@ -100,17 +40,12 @@ export default function Navbar() {
 
           <span className="truncate">
             Happiness Project
-            <sup className="align-super text-[0.55em]">
-              ®
-            </sup>
+            <sup className="align-super text-[0.55em]">®</sup>
           </span>
         </a>
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
-
-        <div className="hidden items-center gap-4 md:flex lg:gap-6">
+        {/* DESKTOP NAVIGATION */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {links.map((link) => (
             <a
               key={link.href}
@@ -118,9 +53,9 @@ export default function Navbar() {
               className="text-sm transition-colors hover:text-black"
               style={{
                 color:
-                  link.label === 'Home'
-                    ? '#000000'
-                    : '#6F6F6F',
+                  link.label === "Home"
+                    ? "#000000"
+                    : "#6F6F6F",
               }}
             >
               {link.label}
@@ -129,150 +64,106 @@ export default function Navbar() {
 
           <a
             href="#reach-us"
-            className="
-              rounded-full
-              bg-black
-              px-6
-              py-2.5
-              text-sm
-              text-white
-              transition-transform
-              hover:scale-[1.03]
-            "
+            className="rounded-full px-6 py-2.5 text-sm bg-black text-white transition-transform hover:scale-[1.03]"
           >
             Begin Journey
           </a>
         </div>
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-        ===================================================== */}
-
+        {/* MOBILE MENU BUTTON */}
         <button
           type="button"
-          onClick={() => setOpen((previous) => !previous)}
+          onClick={() => setOpen(!open)}
           aria-expanded={open}
-          aria-label={
-            open
-              ? 'Close navigation menu'
-              : 'Open navigation menu'
-          }
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           className="
+            md:hidden
             relative
-            z-[100001]
-            rounded-full
+            z-[10001]
+            text-sm
             border
             border-black
+            rounded-full
+            px-5
+            py-2.5
             bg-white
-            px-4
-            py-2
-            text-sm
             text-black
-            transition
-            hover:bg-black
-            hover:text-white
-            md:hidden
+            transition-all
           "
         >
-          {open ? 'Close' : 'Menu'}
+          {open ? "Close" : "Menu"}
         </button>
-      </nav>
 
-      {/* =========================================================
-          MOBILE FULL SCREEN MENU
-
-          IMPORTANT:
-          This is FIXED instead of absolute.
-
-          Therefore it is completely independent of the
-          Home page / Hero / Three.js / Experience positioning.
-      ========================================================= */}
-
-      {open && (
-        <div
-          className="
-            fixed
-            inset-0
-            z-[99998]
-            bg-[#F8F6F1]
-            md:hidden
-          "
-        >
-          {/* Menu content */}
-
+        {/* MOBILE MENU */}
+        {open && (
           <div
             className="
-              flex
-              h-full
-              w-full
-              flex-col
-              overflow-y-auto
-              px-6
-              pb-8
-              pt-[120px]
-              sm:px-8
+              absolute
+              top-full
+              left-0
+              right-0
+              z-[10000]
+              md:hidden
+              bg-black
+              text-white
+              border-t
+              border-white/10
+              shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+              overflow-hidden
             "
           >
-            {/* =================================================
-                NAVIGATION LINKS
-            ================================================= */}
-
-            <div className="flex flex-col">
-              {links.map((link) => (
+            <div className="px-6 py-7 flex flex-col">
+              
+              {links.map((link, index) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
                   className="
-                    border-b
-                    border-black/10
+                    flex
+                    items-center
+                    justify-between
                     py-5
-                    text-xl
-                    transition-all
-                    duration-200
-                    hover:pl-2
+                    text-lg
+                    text-white
+                    border-b
+                    border-white/15
+                    transition-colors
+                    hover:text-white/70
                   "
-                  style={{
-                    color:
-                      link.label === 'Home'
-                        ? '#000000'
-                        : '#6F6F6F',
-                  }}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+
+                  <span className="text-white/50 text-sm">
+                    0{index + 1}
+                  </span>
                 </a>
               ))}
-            </div>
 
-            {/* =================================================
-                CTA
-            ================================================= */}
-
-            <div className="mt-auto pt-8">
+              {/* MOBILE CTA */}
               <a
                 href="#reach-us"
                 onClick={closeMenu}
                 className="
-                  block
+                  mt-7
                   w-full
                   rounded-full
-                  bg-black
-                  px-6
-                  py-4
+                  bg-white
+                  text-black
                   text-center
+                  py-4
                   text-base
-                  text-white
+                  font-medium
                   transition-transform
-                  duration-200
-                  hover:scale-[1.01]
+                  hover:scale-[1.02]
                 "
               >
                 Begin Journey
               </a>
             </div>
           </div>
-        </div>
-      )}
-    </>
+        )}
+      </div>
+    </nav>
   );
 }
