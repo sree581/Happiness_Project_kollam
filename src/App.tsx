@@ -1,4 +1,4 @@
-﻿import Hero from './components/Hero';
+import Hero from './components/Hero';
 import WhoWeAre from './components/WhoWeAre';
 import HowWeHelp from './components/HowWeHelp';
 import OurTeam from './components/OurTeam';
@@ -15,8 +15,8 @@ export default function App() {
       <span className="petal-accent right-12 top-1/3 delay-2" />
       <span className="petal-accent left-1/3 bottom-20 delay-3" />
       <Hero />
-      <WhoWeAre />
       <HowWeHelp />
+      <WhoWeAre />
       <OurTeam />
       <OurWay />
       <CommonQuestions />

@@ -1,9 +1,9 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 
 const links = [
   { label: "Home", href: "#home" },
-  { label: "How This Began", href: "#who-we-are" },
   { label: "What We Offer", href: "#how-we-help" },
+  { label: "How This Began", href: "#who-we-are" },
   { label: "Our Team", href: "#our-team" },
   { label: "Our Way", href: "#our-way" },
   { label: "Contact", href: "#reach-us" },
@@ -17,31 +17,21 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative z-[9999] w-full px-4 sm:px-8 py-4 md:py-6">
+    <nav className="relative z-[9999] w-full px-4 sm:px-8 py-3 md:py-4 bg-[#f8f5ec] border-b border-black/10">
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
         
         {/* LOGO / BRAND */}
         <a
           href="#home"
           onClick={closeMenu}
-          style={{
-            fontFamily: "var(--font-display)",
-            color: "#000000",
-          }}
-          className="flex items-center gap-3 text-2xl sm:text-3xl tracking-tight min-w-0"
+          aria-label="Happiness Project — home"
+          className="shrink-0"
         >
-          <span className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-[14px] bg-white shadow-sm overflow-hidden border border-black/5 shrink-0">
-            <img
-              src="/logo.jpeg"
-              alt="Happiness Project logo"
-              className="h-full w-full object-cover"
-            />
-          </span>
-
-          <span className="truncate">
-            Happiness Project
-            <sup className="align-super text-[0.55em]">®</sup>
-          </span>
+          <img
+            src="/logo-mark.jpg"
+            alt="Happiness Project — your journey, our expertise"
+            className="h-28 sm:h-32 md:h-36 w-auto rounded-[14px] shadow-sm border border-black/5"
+          />
         </a>
 
         {/* DESKTOP NAVIGATION */}

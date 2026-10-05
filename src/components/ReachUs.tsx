@@ -41,7 +41,25 @@ export default function ReachUs() {
           <div className="space-y-3 text-sm" style={{ color: '#6F6F6F' }}>
             <p>Near Natchiar Mutt Temple, Jawahar Nagar, Kollam, Kerala</p>
             <p>+91 79074 93123 (Phone / WhatsApp)</p>
-            <p>English, Malayalam</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mt-8 text-sm">
+            <div>
+              <p className="text-xs tracking-widest uppercase mb-3" style={{ color: 'var(--title-brown)' }}>Service areas</p>
+              <ul className="space-y-1.5" style={{ color: '#6F6F6F' }}>
+                {['Kerala', 'Tamil Nadu', 'Karnataka', 'Delhi'].map((area) => (
+                  <li key={area}>{area}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs tracking-widest uppercase mb-3" style={{ color: 'var(--title-brown)' }}>Languages supported</p>
+              <ul className="space-y-1.5" style={{ color: '#6F6F6F' }}>
+                {['English', 'Malayalam', 'Tamil', 'Hindi'].map((lang) => (
+                  <li key={lang}>{lang}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <p className="text-xs leading-relaxed mt-12 max-w-sm" style={{ color: '#6F6F6F' }}>
