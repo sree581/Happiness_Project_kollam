@@ -17,8 +17,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative z-[9999] w-full px-4 sm:px-8 py-3 md:py-4 bg-[#f8f5ec] border-b border-black/10">
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+    <nav className="relative z-[9999] w-full px-6 sm:px-8 lg:px-12 py-3 md:py-4 bg-[#f8f5ec] border-b border-black/10">
+      <div className="w-full flex flex-wrap justify-between items-center gap-3">
         
         {/* LOGO / BRAND */}
         <a
@@ -40,7 +40,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm transition-colors hover:text-black"
+              className="text-base transition-colors hover:text-black"
               style={{
                 color:
                   link.label === "Home"
@@ -54,7 +54,7 @@ export default function Navbar() {
 
           <a
             href="#reach-us"
-            className="rounded-full px-6 py-2.5 text-sm bg-black text-white transition-transform hover:scale-[1.03]"
+            className="rounded-full px-7 py-3 text-base bg-[#3e6b58] text-white transition-transform hover:scale-[1.03]"
           >
             Begin Journey
           </a>
@@ -94,8 +94,8 @@ export default function Navbar() {
               right-0
               z-[10000]
               md:hidden
-              bg-black
-              text-white
+              bg-[#3e6b58]
+              text-[#f8f5ec]
               border-t
               border-white/10
               shadow-[0_20px_50px_rgba(0,0,0,0.35)]
@@ -115,7 +115,7 @@ export default function Navbar() {
                     justify-between
                     py-5
                     text-lg
-                    text-white
+                    text-[#f8f5ec]
                     border-b
                     border-white/15
                     transition-colors
@@ -138,8 +138,8 @@ export default function Navbar() {
                   mt-7
                   w-full
                   rounded-full
-                  bg-white
-                  text-black
+                  bg-[#f8f5ec]
+                  text-[#24332F]
                   text-center
                   py-4
                   text-base

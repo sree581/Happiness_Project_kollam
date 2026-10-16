@@ -1,18 +1,71 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const therapists = [
+type Detail = {
+  label: string;
+  value: string | string[];
+  wide?: boolean;
+};
+
+type Therapist = {
+  name: string;
+  role: string;
+  details: Detail[];
+  shortBio: string;
+  fullBio: string[];
+  images: string[];
+  imagePosition?: string;
+};
+
+const therapists: Therapist[] = [
+  {
+    name: "Manav Jyothi",
+    role: "Clinical Psychologist & Psychoanalytic Psychotherapist",
+    details: [
+      { label: "Experience", value: "8+ years of experience" },
+      {
+        label: "Specialization",
+        value:
+          "Clinical Psychology, Psychoanalytic Psychotherapy, Individual, Couple & Family Support",
+      },
+      {
+        label: "Domain",
+        value: "Clinical Psychology, Psychotherapy & Mental Wellbeing",
+        wide: true,
+      },
+    ],
+    shortBio:
+      "Manav Jyothi is a licensed Clinical Psychologist and Psychoanalytic psychotherapist with extensive experience in mental health care and therapeutic practice.",
+    fullBio: [
+      "He holds an M.Phil. in Clinical Psychology from IMHANS, Kozhikode, and has served as a Clinical Psychologist with the District Mental Health Programme, Kollam, as well as Malabar Medical College, Kozhikode. He then worked with reputed institutes in mental health in Calicut and Kochi before moving to Kollam to establish Happiness Project. Through his work with individuals, couples, and families, he has supported people in navigating a wide range of psychological and emotional challenges. Combining professional expertise with a compassionate and reflective approach, he is deeply committed to promoting mental well-being, fostering self-understanding, and creating meaningful spaces for dialogue on mental health and human relationships. He currently serves as the Clinical Director of Happiness Project.",
+    ],
+    images: [
+      "/images/manav-jyothi-1.jpeg",
+      "/images/manav-jyothi-2.jpeg",
+    ],
+  },
+
   {
     name: "Adarsh",
     role: "PhD Researcher & Academic Instructor",
-    domain: "Environmental Criminology, Victimology & Human Behavior",
-    experience: "PhD Researcher and academic instructor",
-    specialization:
-      "Crime Mapping & Spatial Analysis, Victim-Centric Approaches, Trauma-Informed Frameworks, and Behavioral Insights.",
+    details: [
+      { label: "Experience", value: "PhD Researcher and academic instructor" },
+      {
+        label: "Specialization",
+        value:
+          "Crime Mapping & Spatial Analysis, Victim-Centric Approaches, Trauma-Informed Frameworks, and Behavioral Insights.",
+      },
+      {
+        label: "Domain",
+        value: "Environmental Criminology, Victimology & Human Behavior",
+        wide: true,
+      },
+    ],
     shortBio:
       "Adarsh is a dedicated PhD researcher specializing in environmental criminology and victimology, supported by a foundational undergraduate background in psychology.",
-    fullBio:
+    fullBio: [
       "His work focuses on the complex intersection of human behavior, adverse experiences, and physical environments. Having completed advanced postgraduate training in Victimology in Croatia, he brings a deeply trauma-informed perspective to the clinical setting. Adarsh believes in a holistic approach to support, utilizing his understanding of systemic and environmental factors to help foster safety, resilience, and overall well-being for individuals.",
+    ],
     images: [
       "/images/adarsh-1.jpg",
       "/images/adarsh-2.jpg",
@@ -20,29 +73,100 @@ const therapists = [
   },
 
   {
-    name: "Manav Jyothi",
-    role: "Clinical Psychologist & Psychoanalytic Psychotherapist",
-    domain: "Clinical Psychology, Psychotherapy & Mental Wellbeing",
-    experience: "8+ years of experience",
-    specialization:
-      "Clinical Psychology, Psychoanalytic Psychotherapy, Individual, Couple & Family Support",
-    shortBio:
-      "Manav Jyothi is a licensed Clinical Psychologist and Psychoanalytic psychotherapist with extensive experience in mental health care and therapeutic practice.",
-    fullBio:
-      "He holds an M.Phil. in Clinical Psychology from IMHANS, Kozhikode, and has served as a Clinical Psychologist with the District Mental Health Programme, Kollam, as well as Malabar Medical College, Kozhikode. He then worked with reputed institutes in mental health in Calicut and Kochi before moving to Kollam to establish Happiness Project. Through his work with individuals, couples, and families, he has supported people in navigating a wide range of psychological and emotional challenges. Combining professional expertise with a compassionate and reflective approach, he is deeply committed to promoting mental well-being, fostering self-understanding, and creating meaningful spaces for dialogue on mental health and human relationships. He currently serves as the Clinical Director of Happiness Project.",
-    images: [
-      "/images/manav-jyothi-1.jpeg",
-      "/images/manav-jyothi-2.jpeg",
+    name: "Mr. Cemmal S.K",
+    role: "Clinical Psychologist",
+    details: [
+      { label: "Qualification", value: "B.Sc, MA, M.Phil in Clinical Psychology", wide: true },
+      {
+        label: "Specialization",
+        value: [
+          "Anxiety",
+          "Depression",
+          "OCD",
+          "Adverse Childhood Experiences",
+          "Self-exploration",
+          "Relationship issues",
+          "Domestic abuse",
+          "Non-recent sexual abuse",
+          "PTSD",
+          "Complex Trauma (C-PTSD)",
+          "Developmental trauma",
+          "Personality disorders",
+        ],
+        wide: true,
+      },
+      {
+        label: "Therapy Approaches",
+        value: [
+          "Polyvagal theory",
+          "IFS (Internal Family System)",
+          "Cognitive Behavior Therapy (CBT)",
+          "Dialectical Behavior Therapy (DBT)",
+          "Compassionate Inquiry",
+          "EMDR (Eye Movement Desensitization and Reprocessing)",
+        ],
+        wide: true,
+      },
     ],
+    shortBio:
+      "Cemmal is a RCI licensed Clinical Psychologist. His expertise lies in providing therapy to adolescents and adults with a focus on developmental trauma, attachment style and trauma-focused practices.",
+    fullBio: [
+      "He graduated in Traumatic Stress studies from Trauma Research Foundation. His approaches are trauma-informed and queer-affirmative. He is an EMDR (Eye Movement Desensitisation Reprocessing) trainee in practice. He believes in non-shaming and non-pathologizing approaches.",
+    ],
+    images: ["/images/cemmal.jpeg"],
+    imagePosition: "50% 25%",
+  },
+
+  {
+    name: "Mr. Hariharan R",
+    role: "RCI-registered Clinical Psychologist",
+    details: [
+      { label: "Works with", value: "Children and adults" },
+      {
+        label: "Expertise",
+        value:
+          "Neurodivergence and trauma-informed care, comprehensive psychological assessments",
+      },
+      {
+        label: "Areas of Support",
+        value: [
+          "Developmental disorders",
+          "Behavioural challenges",
+          "Relationship issues",
+          "Complex trauma",
+        ],
+        wide: true,
+      },
+      {
+        label: "Therapy Approaches",
+        value: [
+          "EMDR (Eye Movement Desensitization and Reprocessing)",
+          "IFS (Internal Family Systems)",
+          "Narrative Therapy",
+          "Behavioural Interventions",
+        ],
+        wide: true,
+      },
+    ],
+    shortBio:
+      "Mr. Hariharan R is an RCI-registered Clinical Psychologist known for his compassionate and client-centric approach to mental health. He is committed to providing ethical, non-shaming therapy that empowers individuals to navigate their distinct life challenges.",
+    fullBio: [
+      "With specialized expertise in neurodivergence and trauma-informed care, he works with both children and adults. He is skilled in conducting comprehensive psychological assessments and treating a wide spectrum of developmental disorders, behavioural challenges, relationship issues, and complex trauma.",
+      "To facilitate deep and lasting healing, he integrates highly effective, evidence-based therapeutic modalities into his practice, including EMDR (Eye Movement Desensitization and Reprocessing), IFS (Internal Family Systems), Narrative Therapy and Behavioural Interventions.",
+      "Mr. Hariharan believes in a collaborative therapeutic process, ensuring that every individual feels safe, respected, and supported on their journey toward mental well-being.",
+    ],
+    images: ["/images/hariharan.jpeg"],
+    imagePosition: "50% 22%",
   },
 ];
 
 function PhotoGallery({
   therapist,
 }: {
-  therapist: (typeof therapists)[number];
+  therapist: Therapist;
 }) {
   const [currentImage, setCurrentImage] = useState(0);
+  const hasMultiple = therapist.images.length > 1;
 
   const nextImage = () => {
     setCurrentImage(
@@ -70,11 +194,14 @@ function PhotoGallery({
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.35 }}
           className="h-full w-full object-cover"
+          style={{ objectPosition: therapist.imagePosition ?? "50% 50%" }}
         />
 
         {/* Soft overlay */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
+        {hasMultiple && (
+        <>
         {/* Previous */}
         <button
           type="button"
@@ -160,9 +287,12 @@ function PhotoGallery({
             </button>
           ))}
         </div>
+        </>
+        )}
       </div>
 
       {/* Thumbnails */}
+      {hasMultiple && (
       <div className="mt-4 flex gap-3">
         {therapist.images.map((image, index) => (
           <button
@@ -190,6 +320,7 @@ function PhotoGallery({
           </button>
         ))}
       </div>
+      )}
     </div>
   );
 }
@@ -198,7 +329,7 @@ function TherapistCard({
   therapist,
   index,
 }: {
-  therapist: (typeof therapists)[number];
+  therapist: Therapist;
   index: number;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -235,65 +366,50 @@ function TherapistCard({
 
         {/* Name */}
         <div className="mb-7">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#91897F]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#3e6b58]">
             {therapist.role}
           </p>
 
-          <h3 className="text-4xl leading-[0.95] text-[#24332F] sm:text-5xl">
+          <h3 className="text-3xl leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
             {therapist.name}
           </h3>
         </div>
 
-        {/* Experience + Specialization */}
+        {/* Details */}
         <div className="grid gap-3 sm:grid-cols-2">
+          {therapist.details.map((detail) => (
+            <div
+              key={detail.label}
+              className={`
+                rounded-[22px]
+                border border-[#E1DAD0]
+                bg-[#F8F6F1]/70
+                p-5
+                ${detail.wide ? "sm:col-span-2" : "min-h-[115px]"}
+              `}
+            >
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#3e6b58]">
+                {detail.label}
+              </p>
 
-          <div
-            className="
-              min-h-[115px]
-              rounded-[22px]
-              border border-[#E1DAD0]
-              bg-[#F8F6F1]/70
-              p-5
-            "
-          >
-            <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9187]">
-              Experience
-            </p>
-
-            <p className="text-base leading-7 text-[#4E514E]">
-              {therapist.experience}
-            </p>
-          </div>
-
-          <div
-            className="
-              min-h-[115px]
-              rounded-[22px]
-              border border-[#E1DAD0]
-              bg-[#F8F6F1]/70
-              p-5
-            "
-          >
-            <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9187]">
-              Specialization
-            </p>
-
-            <p className="text-base leading-7 text-[#4E514E]">
-              {therapist.specialization}
-            </p>
-          </div>
-
-        </div>
-
-        {/* Domain */}
-        <div className="mt-3 rounded-[22px] border border-[#E1DAD0] bg-[#F8F6F1]/70 p-5">
-          <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9187]">
-            Domain
-          </p>
-
-          <p className="text-base leading-7 text-[#4E514E]">
-            {therapist.domain}
-          </p>
+              {Array.isArray(detail.value) ? (
+                <ul className="flex flex-wrap gap-2">
+                  {detail.value.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-[#D6DDD2] bg-white/80 px-3 py-1.5 text-sm text-[#3E5A4E]"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-base leading-7 text-[#4E514E]">
+                  {detail.value}
+                </p>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Short introduction */}
@@ -345,10 +461,12 @@ function TherapistCard({
           }}
           className="overflow-hidden"
         >
-          <div className="border-t border-[#DDD6CC] pt-6">
-            <p className="text-[16px] leading-8 text-[#666864]">
-              {therapist.fullBio}
-            </p>
+          <div className="space-y-4 border-t border-[#DDD6CC] pt-6">
+            {therapist.fullBio.map((paragraph) => (
+              <p key={paragraph} className="text-[16px] leading-8 text-[#666864]">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </motion.div>
 
@@ -373,7 +491,7 @@ export default function OurTeam() {
         lg:py-28
       "
     >
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative w-full">
 
         {/* Section heading */}
         <motion.div
@@ -383,32 +501,20 @@ export default function OurTeam() {
           transition={{ duration: 0.7 }}
           className="mb-12 max-w-3xl"
         >
-          <p className="mb-5 text-xs uppercase tracking-[0.55em] text-[#8B847A]">
-            OUR PEOPLE
-          </p>
+          <p className="eyebrow">Our people</p>
 
-          <h2
-            className="
-              text-5xl
-              leading-[0.9]
-              text-[#24332F]
-              sm:text-6xl
-              lg:text-[82px]
-            "
-          >
-            People behind
-            <br />
-            the <span className="italic">care.</span>
+          <h2 className="section-title">
+            People behind the <span className="italic">care.</span>
           </h2>
 
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#666864] sm:text-xl">
+          <p className="lead mt-6 max-w-2xl">
             Meet the people who bring professional expertise,
             curiosity, compassion, and a deeply human perspective
             to Happiness Project.
           </p>
         </motion.div>
 
-        {/* Two people side by side */}
+        {/* Team grid */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
           {therapists.map((therapist, index) => (
             <TherapistCard

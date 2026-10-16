@@ -1,34 +1,43 @@
-const services = [
-  { name: 'Individual Counselling & Therapy', desc: 'A confidential, one-on-one space to work through your thoughts, emotions and challenges — at your own pace.', image: '/images/services/individual.jpg' },
-  { name: 'Couple & Relationship Counselling', desc: 'For couples working on communication, rebuilding trust, or finding their way back to each other.', image: '/images/services/couple.jpg' },
-  { name: 'Family Therapy', desc: 'Helping families understand one another better, work through conflict, and rebuild a healthier way of relating.', image: '/images/services/family.jpg' },
-  { name: 'Child & Adolescent Counselling', desc: 'Age-appropriate support for children and teens facing academic pressure, social struggles or emotional difficulties.', image: '/images/services/child.jpg' },
-  { name: 'Psychological Assessments', desc: 'Structured assessments to better understand cognitive, emotional, behavioural or developmental concerns.', image: '/images/services/assessment.jpg' },
-  { name: 'Cognitive Behaviour Therapy', desc: 'A structured, evidence-based method that helps identify and shift thought patterns that aren\'t serving you.', image: '/images/services/cbt.jpg' },
-  { name: 'Psychodynamic Therapy', desc: 'A deeper, exploratory approach that looks at the past experiences shaping how you feel and act today.', image: '/images/services/psychodynamic.jpg' },
-  { name: 'Workshops & Mental Health Programs', desc: 'Awareness sessions for schools, colleges and workplaces building a healthier culture around mental health.', image: '/images/services/workshops.jpg' },
+import ServiceArt, { type ServiceArtVariant } from './ServiceArt';
+
+const services: { name: string; desc: string; art: ServiceArtVariant }[] = [
+  { name: 'Individual Counselling & Therapy', desc: 'A confidential, one-on-one space to work through your thoughts, emotions and challenges — at your own pace.', art: 'individual' },
+  { name: 'Couple & Relationship Counselling', desc: 'For couples working on communication, rebuilding trust, or finding their way back to each other.', art: 'couple' },
+  { name: 'Family Therapy', desc: 'Helping families understand one another better, work through conflict, and rebuild a healthier way of relating.', art: 'family' },
+  { name: 'Child & Adolescent Counselling', desc: 'Age-appropriate support for children and teens facing academic pressure, social struggles or emotional difficulties.', art: 'child' },
+  { name: 'Psychological Assessments', desc: 'Structured assessments to better understand cognitive, emotional, behavioural or developmental concerns.', art: 'assessment' },
+  { name: 'Cognitive Behaviour Therapy', desc: 'A structured, evidence-based method that helps identify and shift thought patterns that aren\'t serving you.', art: 'cbt' },
+  { name: 'Psychodynamic Therapy', desc: 'A deeper, exploratory approach that looks at the past experiences shaping how you feel and act today.', art: 'psychodynamic' },
+  { name: 'Workshops & Mental Health Programs', desc: 'Awareness sessions for schools, colleges and workplaces building a healthier culture around mental health.', art: 'workshops' },
 ];
 
 export default function HowWeHelp() {
   return (
-    <section id="how-we-help" className="px-6 py-20">
-      <div className="max-w-6xl mx-auto">
-        <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>What we offer</p>
-        <h2 className="text-4xl sm:text-5xl mb-10 animate-fade-rise" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>
-          Support for <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>every stage of life.</span>
-        </h2>
+    <section id="how-we-help" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-28">
+      <div className="w-full">
+        <div className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-20">
+          <div>
+            <p className="eyebrow">What we offer</p>
+            <h2 className="section-title">
+              Support for <span className="italic">every stage of life.</span>
+            </h2>
+          </div>
+          <p className="lead lg:pb-2">
+            From one-on-one therapy to family sessions and workshops, every service is delivered by
+            trained professionals in a space that feels safe, warm and completely confidential.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6">
           {services.map((s) => (
-            <div key={s.name} className="service-card liquid-card rounded-[1.25rem] p-4 md:p-5 flex flex-col gap-4 h-full">
-              <div className="relative h-44 w-full overflow-hidden rounded-[1rem] shadow-sm">
-                <img src={s.image} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-[#507a66]/15" />
+            <div key={s.name} className="service-card liquid-card rounded-[1.5rem] p-5 flex flex-col gap-5 h-full">
+              <div className="relative h-56 w-full overflow-hidden rounded-[1.1rem] shadow-sm">
+                <ServiceArt variant={s.art} label={s.name} />
               </div>
-              <h3 className="text-xl font-semibold leading-tight" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>
+              <h3 className="px-1 text-2xl font-medium leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                 {s.name}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#6F6F6F' }}>{s.desc}</p>
+              <p className="body-text px-1 pb-2">{s.desc}</p>
             </div>
           ))}
         </div>

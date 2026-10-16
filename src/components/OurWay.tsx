@@ -7,23 +7,37 @@ export default function OurWay() {
   ];
 
   return (
-    <section id="our-way" className="px-6 py-20">
-      <div className="max-w-5xl mx-auto">
-        <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#6F6F6F' }}>Our way</p>
-        <h2 className="text-4xl sm:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>
-          Listen. Understand. Support. <span style={{ color: '#6F6F6F', fontStyle: 'italic' }}>Grow.</span>
-        </h2>
-        <p className="max-w-xl text-base leading-relaxed mb-10" style={{ color: '#6F6F6F' }}>
-          Healing begins with feeling heard. Every session is guided by one principle: understand a
-          person fully before offering direction, so the support we give actually fits the person
-          receiving it.
-        </p>
+    <section id="our-way" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-28">
+      <div className="w-full grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-20 items-start">
+        <div className="lg:sticky lg:top-8">
+          <p className="eyebrow">Our way</p>
+          <h2 className="section-title mb-8">
+            Listen. Understand. Support. <span className="italic">Grow.</span>
+          </h2>
+          <p className="lead max-w-xl">
+            Healing begins with feeling heard. Every session is guided by one principle: understand a
+            person fully before offering direction, so the support we give actually fits the person
+            receiving it.
+          </p>
+          <a
+            href="tel:+917907493123"
+            className="mt-10 inline-flex rounded-full bg-[#3e6b58] px-8 py-4 text-base text-[#f8f5ec] transition-transform hover:scale-[1.03]"
+          >
+            Book an Appointment
+          </a>
+        </div>
 
-        <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-          {pillars.map((p) => (
-            <div key={p.t}>
-              <h3 className="text-lg mb-2" style={{ fontFamily: 'var(--font-display)', color: 'var(--title-brown)' }}>{p.t}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#6F6F6F' }}>{p.d}</p>
+        <div className="grid sm:grid-cols-2 gap-5 lg:gap-6">
+          {pillars.map((p, i) => (
+            <div key={p.t} className="liquid-card rounded-[1.5rem] p-8">
+              <span
+                className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#3e6b58] text-lg font-semibold text-[#f8f5ec]"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                0{i + 1}
+              </span>
+              <h3 className="mb-3 text-2xl" style={{ fontFamily: 'var(--font-display)' }}>{p.t}</h3>
+              <p className="body-text">{p.d}</p>
             </div>
           ))}
         </div>

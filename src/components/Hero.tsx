@@ -30,7 +30,7 @@ export default function Hero() {
           style={{ background: 'linear-gradient(135deg, rgba(62,107,88,0.88) 0%, rgba(80,122,102,0.78) 55%, rgba(92,135,115,0.62) 100%)' }}
         />
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl flex-col items-start justify-center px-6 py-24 text-left">
+        <div className="relative z-10 flex min-h-[calc(100vh-7rem)] w-full flex-col items-start justify-center px-6 sm:px-8 lg:px-12 py-24 text-left">
           <h1
             className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl max-w-5xl font-normal"
             style={{
@@ -53,7 +53,7 @@ export default function Hero() {
 
           <div className="animate-fade-rise-delay-2 mt-12 flex flex-wrap gap-4">
             <a
-              href="#reach-us"
+              href="tel:+917907493123"
               className="inline-flex rounded-full bg-[#f8f5ec] px-10 sm:px-14 py-5 text-base text-black transition-transform hover:scale-[1.03]"
             >
               Book an Appointment
