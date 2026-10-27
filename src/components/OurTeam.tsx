@@ -15,6 +15,7 @@ type Therapist = {
   fullBio: string[];
   images: string[];
   imagePosition?: string;
+  linkedin?: string;
 };
 
 const therapists: Therapist[] = [
@@ -157,6 +158,38 @@ const therapists: Therapist[] = [
     ],
     images: ["/images/hariharan.jpeg"],
     imagePosition: "50% 22%",
+  },
+
+  {
+    name: "Akanksha Rohilla",
+    role: "RCI-registered Clinical Psychologist",
+    details: [
+      { label: "Training", value: "2 years of intensive clinical training at CIP, Ranchi" },
+      { label: "Experience", value: "3+ years in practice, in-person and online" },
+      {
+        label: "Areas of Support",
+        value: [
+          "Mental and behavioural disorders",
+          "Schizophrenia",
+          "Neurofeedback",
+          "Tele-therapy",
+        ],
+        wide: true,
+      },
+      {
+        label: "Approach",
+        value: "Person-centred, grounded in ethics, empathy and professionalism",
+        wide: true,
+      },
+    ],
+    shortBio:
+      "I'm an RCI registered Clinical Psychologist. In my 2 years of intense training at CIP, Ranchi, and 3 more years in practice, I have dealt with a variety of mental and behavioral disorders in-person and tele platforms, provided mental health care with passion and patience, with ethics and empathy, and even worked closely with schizophrenia patients with modern technology of Neurofeedback.",
+    fullBio: [
+      "My goal as a therapist is always in the best benefit of the patient, as I have learned to work with ethics and professionalism with a person-centred approach.",
+    ],
+    images: ["/images/akansha.jpeg"],
+    imagePosition: "50% 35%",
+    linkedin: "https://www.linkedin.com/in/akanksha-rohilla-050462140",
   },
 ];
 
@@ -373,6 +406,17 @@ function TherapistCard({
           <h3 className="text-3xl leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
             {therapist.name}
           </h3>
+
+          {therapist.linkedin && (
+            <a
+              href={therapist.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#3e6b58] transition hover:text-[#24332F]"
+            >
+              LinkedIn profile ↗
+            </a>
+          )}
         </div>
 
         {/* Details */}

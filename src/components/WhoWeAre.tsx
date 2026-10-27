@@ -27,8 +27,8 @@ export default function WhoWeAre() {
               />
             </div>
             <div className="absolute -bottom-6 left-6 rounded-2xl bg-[#3e6b58] px-6 py-5 text-[#f8f5ec] shadow-xl sm:left-10">
-              <p className="text-3xl font-semibold" style={{ fontFamily: 'var(--font-display)' }}>Kollam</p>
-              <p className="text-sm text-[#f8f5ec]/80">Closer to a home than a hospital</p>
+              <p className="text-3xl font-semibold" style={{ fontFamily: 'var(--font-display)' }}>lets sit together and figure it out</p>
+             
             </div>
           </div>
 
