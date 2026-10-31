@@ -34,7 +34,7 @@ export default function WhoWeAre() {
 
           {/* Story */}
           <div>
-            <p className="eyebrow">How this began</p>
+            <p className="eyebrow">The Story Started</p>
             <h2 className="section-title mb-8">
               Two friends, one belief: <span className="italic">care shouldn't feel clinical.</span>
             </h2>
